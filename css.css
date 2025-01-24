@@ -63,6 +63,7 @@ sub::placeholder{
     margin-top: 20px;
     font-weight: bolder;
     text-align: center;
+    box-sizing : border-box
 
 }
 #send{
