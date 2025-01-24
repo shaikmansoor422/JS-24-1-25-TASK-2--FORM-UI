@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form UI</title>
+    <link rel="stylesheet" href="./css.css">
+</head>
+<body style="background-color: rgb(205, 254, 205);">
+    <h1>FORM</h1>
+    <div class="container" >
+        <form action="" id="myform">
+            <label for="name"></label>
+            <input type="text" name="name" id="name" placeholder="Enter your Name" required>
+            <label for="age"></label>
+            <input type="text" name="age" id="age" placeholder="Enter your Age" required>
+            <label for="mno"></label>
+            <input type="text" name="Mno" id="mno" placeholder="Enter your Mobile number" required>
+            <label for="from"></label>
+            <input type="text" name="area" id="from" placeholder="Where you from ?" required>
+            <label for="quali"></label>
+            <input type="text" name="study" id="quali" placeholder="Your Qualification?" required>
+            <label for="course"></label>
+            <input  type="text" name="course" id="course" placeholder="Course you are interested :" required>
+            <label for="sub"></label>
+            <input  type="SUBMIT" name="name" id="sub"  style="color: white; box-shadow: 0px 0px 10px 3px black;" required>
+        </form>
+        <p style="font-size: 15px;">Note : Check your Information below</p>
+        </div> 
+        
+         <div id="display"> <!-- Verify your data once and send --> 
+<!-- 
+            <form>
+                <input type="submit" id="send"  style="color: white; box-shadow: 0px 0px 10px 3px black;">
+            </form> -->
+        </div>
+
+        
+<script>
+// let a = document.getElementById("name")
+// let b = document.getElementById("age")
+// let c = document.getElementById("mno")
+// let d = document.getElementById("from")
+// let e = document.getElementById("quali")
+// let f = document.getElementById("course")
+
+    var form = document.getElementById("myform")
+    form.addEventListener("submit",function(info){
+        let display_Box = document.getElementById("display")
+        info.preventDefault()
+        display_Box.innerHTML=`Verify your data once and send <br> <br> Name :${info.target[0].value} <br> Age : ${info.target[1].value} <br> P-no : ${info.target[2].value} <br> From : ${info.target[3].value} <br> Qualification : ${info.target[4].value} <br> Course    : ${info.target[5].value} `
+        display_Box.style.color ="rgb(3, 91, 118)"
+        display_Box.style.textAlign ="left"
+        let send = document.createElement("div")
+        send.innerText = "SEND"
+        send.style.width = "100px"
+        send.style.height = "30px"
+        send.style.boxShadow = "0px 0px 8px 5px  rgb(3, 91, 118)"
+        send.style.textAlign = "center"
+        send.style.borderRadius = "20px"
+        send.style.color = "white";
+        send.style.paddingTop = "7px";
+        send.style.marginTop= "20px";
+        send.style.backgroundColor = "  rgb(8, 140, 140)";
+        display_Box.append(send)
+        send.addEventListener("click",function(){
+            display_Box.innerText = "Congratulations, you have succefully submitted your form"
+        })
+
+
+    })
+    
+</script>
+</body>
+</html>
